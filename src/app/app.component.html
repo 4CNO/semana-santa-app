@@ -6,6 +6,18 @@
 <!-- * * * * * * * * * Delete the template below * * * * * * * * * -->
 <!-- * * * * * * * to get started with your project! * * * * * * * -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<nav>
+  <a routerLink="/">Inicio</a>
+  <a routerLink="/calculadora">Calculadora</a>
+</nav>
+<router-outlet></router-outlet>
+<nav class="bg-gray-800 text-white p-4 flex gap-4">
+  <a routerLink="/" routerLinkActive="font-bold text-blue-300">Inicio</a>
+  <a routerLink="/calculadora" routerLinkActive="font-bold text-blue-300">Calculadora</a>
+</nav>
+<app-calculadora></app-calculadora>
+
+<router-outlet></router-outlet>
 
 <style>
   :host {

@@ -1,0 +1,28 @@
+<div class="p-4 max-w-xl mx-auto bg-white rounded-xl shadow-md space-y-4">
+  <h2 class="text-2xl font-bold text-center">Calculadora de Festivos y Semana Santa</h2>
+  <div class="flex items-center gap-2">
+    <label class="text-sm">Año:</label>
+    <input [(ngModel)]="year" type="number" class="border p-2 rounded w-32" />
+    <button (click)="calcular()" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
+      Calcular
+    </button>
+  </div>
+
+  <div *ngIf="semanaSanta">
+    <h3 class="font-semibold mt-4">Semana Santa:</h3>
+    <ul class="list-disc pl-6">
+      <li>Domingo de Ramos: {{ semanaSanta?.domingoDeRamos | date }}</li>
+      <li>Jueves Santo: {{ semanaSanta?.juevesSanto | date }}</li>
+      <li>Viernes Santo: {{ semanaSanta?.viernesSanto | date }}</li>
+      <li>Domingo de Pascua: {{ semanaSanta?.domingoDePascua | date }}</li>
+      <li>Inicio Oficial (algoritmo propio): {{ semanaSanta?.inicioSemanaSanta | date }}</li>
+    </ul>
+  </div>
+
+  <div *ngIf="festivos.length > 0">
+    <h3 class="font-semibold mt-4">Festivos:</h3>
+    <ul class="list-disc pl-6">
+      <li *ngFor="let f of festivos">{{ f.nombre }} - {{ f.fecha | date }}</li>
+    </ul>
+  </div>
+</div>
